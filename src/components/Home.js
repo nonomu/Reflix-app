@@ -3,24 +3,20 @@ import { BrowserRouter as Router,Route,Link} from 'react-router-dom'
 // import '../styles/home.css'
 
 class Home extends Component {
-
+   constructor()
+   {
+       super()
+   }
+   
     render() {
+        let users=this.props.users
         return (
-            <div>
-                {/* <div id="u-input">
-                    <input type="text" placeholder="Ask and you shall receive" />
-                    <div id="button">Seek</div>
-                </div> */}
-
-                <h1 id="home-title">Who's Watching?</h1>
-
+          users?  <div className="home-container">
+                <div><h1 id="home-title">Who's Watching?</h1></div>
                 <div id="users">
-                    <Link className="user" to="/Catalog/"> <div id="Noam"><span className="users">Noam</span></div></Link>
-                    <Link className="user" to="/Catalog/"> <div id="Yakov"><span className="users">Yakov</span></div></Link>
-                    <Link className="user" to="/Catalog/"> <div id="Sapir"><span className="users">Sapir</span></div></Link>
-                    <Link className="user" to="/Catalog/"> <div id="Shoam"><span className="users">Shoam</span></div></Link>
+                    {users.map(u =>  <Link key={u.id} className="user" to={`/Catalog/user/${u.id}`}> <div id={u.name}><span className="users">{u.name}</span></div></Link>)}
                 </div>
-            </div>
+            </div>:null
         );
     }
 }

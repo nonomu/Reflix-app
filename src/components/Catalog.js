@@ -1,41 +1,50 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import Movie from './Movie';
+import Axios from 'axios';
+let serverApi = 'http://localhost:4200/api'
 
 
 class Catalog extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            movies: [...props.state.movies],
-            budget: props.state.budget,
-            filter: ""
+            userFavorites: []
         }
     }
-
+    getUserFavorites = async () => {
+        let userId = parseInt(this.props.match.params.id)
+        let favorites = await Axios.get(`${serverApi}/favorites/${userId}`)
+        favorites = favorites.data[0]
+        this.setState({ userFavorites: favorites })
+    }
+    componentDidMount = async () => {
+        this.getUserFavorites(parseInt(this.props.match.params.id))
+    }
     render() {
-        const budget = this.props.state.budget
-        const favoriteMovies = this.props.state.movies.filter(c => c.isRented === true)
+        let userId = parseInt(this.props.match.params.id)
+        let user = this.props.state.users.find(u => u.id === userId)
+        const favoriteMovies = this.state.userFavorites
         let moviesAvailable = this.props.state.movies.filter(c => c.isRented === false)
         return (
-            <div>
-                <h4>Budget:{this.props.state.budget}$</h4>
+            user ? (
+            <div className="movie-container">
+                <h4  style={{color: "white" , textAlign:"center"}} >Budget:{user.budget}$</h4>
                 <div><h2> Favorites:</h2></div>
                 <div id="favorite-movies">
 
-                    {favoriteMovies.map(f => {
-                        return (<Movie rentalChange={this.props.rentalChange} movie={f} key={f.posterUrl} />)
-                    })}
+                    {favoriteMovies.map(f => 
+                        <Movie getUserFavorites={this.getUserFavorites} user={user} rentalChange={this.props.rentalChange} movie={f} key={f.image} />
+                    )}
                 </div>
-                <div> <h2>   Movies available: </h2></div>
+                <div> <h2> Movies available: </h2></div>
                 <div id="available-movies">
 
-                    {moviesAvailable.map(f => {
-                        if(f.title)
-                        return (<Movie rentalChange={this.props.rentalChange} movie={f} key={f.posterUrl} />)
-                    })}
+                    {moviesAvailable.map(m=> 
+                       <Movie getUserFavorites={this.getUserFavorites} user={user} rentalChange={this.props.rentalChange} movie={m} key={m.image} />
+                    )}
                 </div>
-            </div>
+            </div>) : null
         )
     }
 }
