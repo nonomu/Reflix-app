@@ -46,5 +46,5 @@ Movie trailer with close button
 
 
 ## Tech-stack
-1. React, Material-UI, React-Icons, and Axios.
+1. React, Material-UI, React-Icons, and Axios, Youtube Api.
 2. Express (Node.js), Sequelize (Postgress).
