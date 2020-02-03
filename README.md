@@ -29,7 +29,7 @@ Reflix is a movie detail/rent platform built with React. It includes movie infor
 
 ### Home
 A short introduction to the platform. The user can choose his user to see his details.
-<p align="center"><img src="assets/home.PNG" width="300" /></p>
+<p align="center"><img src="assets/Home.PNG" width="300" /></p>
 
 ### Movies
 All movies that user has Rented or available to rent. (each user has a budget)
@@ -37,7 +37,7 @@ All movies that user has Rented or available to rent. (each user has a budget)
 
 ### Movie-Detailes
 Movie detail with a trailers
-<p align="center"><img src="assets/login.png" width="300" /></p>
+<p align="center"><img src="assets/movieInfo.PNG" width="300" /></p>
 
 ### Movie-trailer
 Movie trailer with close button
