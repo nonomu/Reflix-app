@@ -1,7 +1,7 @@
 # Reflix
 
 Reflix is a movie detail/rent platform built with React. It includes movie inforamtion and adding to favorites.
-
+Full responsive design.
 ## Contributors
 - Noam Mualmi (nonomu)
 ## Table Of Contents
