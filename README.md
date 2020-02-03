@@ -21,7 +21,7 @@ Reflix is a movie detail/rent platform built with React. It includes movie infor
 1. Clone the repo.
 2. Run `npm install`.
 3. Run `node server.js`.
-4. Run `mysql`.
+4. Run `Pg Admin`.
 5. Run `($env:REACT_APP_NOT_SECRET_CODE = 'YOURE_API_KEY_HERE') -and (npm start)` with youre google api key.
 6. Navigate to `http://localhost:3000`.
 
