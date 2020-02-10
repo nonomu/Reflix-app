@@ -9,8 +9,8 @@ Full responsive design.
   - [Screenshots](#screenshots)
     - [Home](#home)
     - [Movies](#Movies)
-    - [Login](#login)
     - [Movie-Detailes](#Movie-Detailes)
+    - [Movie-trailer](#Movie-trailer)
 
   - [Tech-stack](#tech-stack)
 
