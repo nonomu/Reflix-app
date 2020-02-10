@@ -4,7 +4,6 @@ Reflix is a movie detail/rent platform built with React. It includes movie infor
 Full responsive design.
 ## Table Of Contents
 - [Reflix](#reflix)
-  - [Contributors](#contributors)
   - [Table Of Contents](#table-of-contents)
   - [Running the project](#running-the-project)
   - [Screenshots](#screenshots)
